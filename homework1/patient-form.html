@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Registration Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
 
+    <div id="banner">
+        <img src="your-logo.jpg" alt="Medical Logo" width="80" height="80">
+        <h1>We'R'Docs Medical</h1>
+        <p>Today is: 
+            <script>
+                // Dynamic inline javascript for the date
+                var today = new Date();
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(today.toLocaleDateString("en-US", options));
+            </script>
+        </p>
+    </div>
+
+    <div class="main-content">
+        <h2>New Patient Registration</h2>
+        <p class="instructions">Please fill out the form below. <span class="required-text">* Indicates required field.</span></p>
+
+        <form action="thankyou.html">
+            <table class="form-table">
+                <tr>
+                    <td><label for="fname">First Name:*</label></td>
+                    <td><input type="text" id="fname" name="fname" maxlength="30" required></td>
+                    
+                    <td><label for="minitial">M.I.:</label></td>
+                    <td><input type="text" id="minitial" name="minitial" maxlength="1" size="2"></td>
+                    
+                    <td><label for="lname">Last Name:*</label></td>
+                    <td><input type="text" id="lname" name="lname" maxlength="30" required></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date of Birth:*</label></td>
+                    <td><input type="date" id="dob" name="dob" required></td>
+                    
+                    <td><label for="ssn">Social Security:*</label></td>
+                    <td colspan="3"><input type="password" id="ssn" name="ssn" minlength="9" maxlength="11" required></td>
+                </tr>
+                <tr>
+                    <td><label for="address1">Address Line 1:*</label></td>
+                    <td colspan="5"><input type="text" id="address1" name="address1" maxlength="30" size="40" required></td>
+                </tr>
+                <tr>
+                    <td><label for="address2">Address Line 2:</label></td>
+                    <td colspan="5"><input type="text" id="address2" name="address2" maxlength="30" size="40"></td>
+                </tr>
+                <tr>
+                    <td><label for="city">City:*</label></td>
+                    <td><input type="text" id="city" name="city" maxlength="30" required></td>
+                    
+                    <td><label for="state">State:*</label></td>
+                    <td>
+                        <select id="state" name="state" required>
+                            <option value="">Select...</option>
+                            <option value="TX">Texas</option>
+                            <option value="NY">New York</option>
+                            <option value="CA">California</option>
+                            </select>
+                    </td>
+                    
+                    <td><label for="zip">Zip Code:*</label></td>
+                    <td><input type="text" id="zip" name="zip" minlength="5" maxlength="10" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email Address:*</label></td>
+                    <td colspan="5"><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="symptoms">Current Symptoms:</label></td>
+                    <td colspan="5"><textarea id="symptoms" name="symptoms" rows="3" cols="50" placeholder="Describe your symptoms here..."></textarea></td>
+                </tr>
+                <tr>
+                    <td>Medical History:</td>
+                    <td colspan="5">
+                        <p>Check all that apply:</p>
+                        <input type="checkbox" id="cpox" name="history" value="Chicken Pox"> <label for="cpox">Chicken Pox</label><br>
+                        <input type="checkbox" id="measles" name="history" value="Measles"> <label for="measles">Measles</label><br>
+                        <input type="checkbox" id="covid" name="history" value="Covid-19"> <label for="covid">Covid-19</label><br>
+                        <input type="checkbox" id="spox" name="history" value="Small Pox"> <label for="spox">Small Pox</label><br>
+                        <input type="checkbox" id="tetanus" name="history" value="Tetanus"> <label for="tetanus">Tetanus</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Demographics:</td>
+                    <td colspan="5">
+                        Gender: 
+                        <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vaccinated?</td>
+                    <td colspan="5">
+                        <input type="radio" id="vaxY" name="vax" value="Y"> <label for="vaxY">Yes</label>
+                        <input type="radio" id="vaxN" name="vax" value="N"> <label for="vaxN">No</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Insurance?</td>
+                    <td colspan="5">
+                        <input type="radio" id="insY" name="ins" value="Y"> <label for="insY">Yes</label>
+                        <input type="radio" id="insN" name="ins" value="N"> <label for="insN">No</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="health">Health Scale (1-10):</label></td>
+                    <td colspan="5"><input type="range" id="health" name="health" min="1" max="10"></td>
+                </tr>
+                <tr>
+                    <td><label for="userid">Desired User ID:*</label></td>
+                    <td colspan="5"><input type="text" id="userid" name="userid" maxlength="20" required></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">Password:*</label></td>
+                    <td colspan="2"><input type="password" id="pwd" name="pwd" required></td>
+                    <td><label for="pwd2">Re-enter Password:*</label></td>
+                    <td colspan="2"><input type="password" id="pwd2" name="pwd2" required></td>
+                </tr>
+            </table>
+            
+            <div class="button-group">
+                <input type="reset" value="CLEAR AND START OVER" class="btn btn-clear">
+                <input type="submit" value="Submit" class="btn btn-submit">
+            </div>
+        </form>
+    </div>
+
+    <div id="footer">
+        <p><strong>We'R'Docs Medical</strong></p>
+        <p>PO BOX 18881<br>Sugar Land TX  77496</p>
+        <button onclick="alert('Contact form coming soon!')">CONTACT US</button>
+        <p>
+            <a href="https://facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </p>
+    </div>
+
+</body>
+</html>
